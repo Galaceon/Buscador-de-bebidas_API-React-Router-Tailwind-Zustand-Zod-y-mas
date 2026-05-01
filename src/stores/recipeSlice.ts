@@ -1,19 +1,24 @@
 import type { StateCreator } from "zustand"
 import { getCategories } from "../services/RecipeService"
+import type { Categories } from "../types"
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-type Category = {}
 
 export type RecipesSliceType = {
-    categories: Category[]
+    categories: Categories
     fetchCategories: () => Promise<void>
 }
 
-export const createRecipeSlice : StateCreator<RecipesSliceType> = () => ({
-    categories: [],
+export const createRecipeSlice : StateCreator<RecipesSliceType> = (set) => ({
+    categories: {
+        drinks: []
+    },
 
     fetchCategories: async () => {
-        getCategories()
+        const categories = await getCategories()
+
+        set({
+            categories
+        })
     }
 
 })
