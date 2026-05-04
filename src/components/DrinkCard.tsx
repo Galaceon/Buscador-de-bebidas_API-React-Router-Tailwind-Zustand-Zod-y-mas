@@ -7,9 +7,19 @@ type DrinkCardProps = {
 
 export default function DrinkCard({drink} : DrinkCardProps) {
     return (
-        <div>
+        <div className="shadow-xl rounded-2xl overflow-hidden">
+            <div className="overflow-hidden">
+                <img className="hover:scale-115 transition-transform hover:rotate-2" src={drink.strDrinkThumb} alt={`Imagen de ${drink.strDrink}`}></img>
+            </div>
 
-            <h2>{drink.strDrink}</h2>
+            <div className="p-7">
+                <h2 className="text-2xl truncate font-black">{drink.strDrink}</h2>
+                <button
+                    className="bg-orange-400 hover:bg-orange-500 mt-5 w-full p-3 font-bold text-white text-lg"
+                >
+                    Ver Receta
+                </button>
+            </div>
         </div>
     )
 }
