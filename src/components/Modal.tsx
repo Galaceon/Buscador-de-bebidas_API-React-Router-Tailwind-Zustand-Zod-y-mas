@@ -53,7 +53,7 @@ export default function Modal() {
                                 leaveFrom="opacity-75 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6" >
+                                <DialogPanel className="relative transform overflow-hidden rounded-2xl bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6" >
                                     <DialogTitle as="h3" className="text-gray-900 text-4xl font-extrabold my-5 text-center">
                                         {selectedRecipe.strDrink}
                                     </DialogTitle>
@@ -75,6 +75,24 @@ export default function Modal() {
                                     <p className='text-lg'>
                                         {selectedRecipe.strInstructions}
                                     </p>
+
+                                    <div className='mt-5 flex justify-between gap-4'>
+                                        <button
+                                            type='button'
+                                            onClick={closeModal}
+                                            className='w-full rounded bg-gray-600 p-3 font-bold uppercase text-white shadow hover:bg-gray-500'
+                                        >
+                                            Cerrar
+                                        </button>
+
+                                        <button
+                                            type='button'
+                                            onClick={}
+                                            className='w-full rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500'
+                                        >
+                                            Agregar a Favoritos
+                                        </button>
+                                    </div>
                                 </DialogPanel>
                             </TransitionChild>
                         </div>
