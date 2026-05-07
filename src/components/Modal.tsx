@@ -87,7 +87,8 @@ export default function Modal() {
 
                                         <button
                                             type='button'
-                                            onClick={}
+                                            // TODO
+                                            //onClick={}
                                             className='w-full rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500'
                                         >
                                             Agregar a Favoritos
